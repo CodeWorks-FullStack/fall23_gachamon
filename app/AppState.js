@@ -11,6 +11,7 @@ class ObservableAppState extends EventEmitter {
   values = loadState('values', [Value])
 
   // SECTION global variables go here
+  // coins = loadState('coins', Number)
   coins = 0
 
   // NOTE this is just for intellisense, and better error handling
@@ -22,6 +23,14 @@ class ObservableAppState extends EventEmitter {
     new Gachamon({ name: 'Honey Boo Boo', emoji: '🦡', rarity: 2 }),
     new Gachamon({ name: 'Smoothless', rarity: 3, emoji: '🐉' }),
   ]
+
+  /** @type {Gachamon[]}*/
+  // myGachamons = []
+  myGachamons = loadState('myGachamons', [Gachamon])
+
+
+  /** @type {Gachamon | null}*/
+  activeGachamon = null
 
   // !SECTION
 

@@ -16,14 +16,27 @@ function _drawCoins() {
 
 export class CoinsController {
   constructor () {
+    // SECTION page load
+
     console.log('Coins Controller loaded');
+
+    // !SECTION
+
+    // SECTION register listeners
+
+    // AppState.on('coins', () => console.log('coins changed'))
+    AppState.on('coins', _drawCoins)
+
+    // !SECTION 
   }
 
   // SECTION public methods
   addCoin() {
     console.log('You clicked the add coin button!');
     coinsService.addCoin()
-    _drawCoins()
+
+    // NOTE handled by our listener
+    // _drawCoins()
   }
   // !SECTION 
 }
