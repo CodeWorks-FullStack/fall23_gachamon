@@ -9,8 +9,10 @@ function _drawCoins() {
     coinEmojis += '🪙'
   }
 
-  // setText('coinCount', AppState.coins)
   setText('coinCount', coinEmojis)
+
+  // NOTE if you just want to dump out a single value, you don't have to do anything fancy
+  // setText('coinCount', AppState.coins)
 }
 
 
@@ -25,6 +27,7 @@ export class CoinsController {
     // SECTION register listeners
 
     // AppState.on('coins', () => console.log('coins changed'))
+    // NOTE registers an event listener for our 'coins' property in the AppState. Every time this value is re-assigned, this calls the _drawCoins function
     AppState.on('coins', _drawCoins)
 
     // !SECTION 

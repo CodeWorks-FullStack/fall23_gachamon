@@ -5,12 +5,13 @@ export class Gachamon {
   /**
    * @param {{ name: string; emoji: string; rarity: number; }} data
    */
-  constructor (data) {
+  constructor (data) { // we pass through a single object in our constructor
     this.name = data.name
     this.emoji = data.emoji
     this.rarity = data.rarity
   }
 
+  // NOTE you can store more than one HTML template on your class models
   get GachamonCatalogCard() {
     return `
     <div class="col">

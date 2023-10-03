@@ -24,19 +24,20 @@ class ObservableAppState extends EventEmitter {
     new Gachamon({ name: 'Smoothless', rarity: 3, emoji: '🐉' }),
   ]
 
-  /** @type {Gachamon[]}*/
-  // myGachamons = []
-  myGachamons = loadState('myGachamons', [Gachamon])
 
+  /** @type {Gachamon[]}*/
+  // NOTE we call loadstate here to pull data from our local storage. Our first argument should be a key that is in local storage, and our second argument is what we our data to turin into once it's loaded from localStorage
+  myGachamons = loadState('myGachamons', [Gachamon])
+  // myGachamons = [] we are now loading these from localStorage, so we don't have to do this
 
   /** @type {Gachamon | null}*/
+  // NOTE this starts as having no value (or null), but we can store a single gachamon here later
   activeGachamon = null
 
   // !SECTION
 
   // NOTE Used to load initial data
   init() {
-
   }
 
 }

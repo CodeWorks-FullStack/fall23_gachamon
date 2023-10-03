@@ -16,12 +16,15 @@ function _drawGachamonCatalog() {
 function _drawActiveGachamon() {
   const activeGachamon = AppState.activeGachamon
 
+  // NOTE this can be null, so if it we inject nothing into the speciified id, and stop running this function
   if (!activeGachamon) {
     setHTML('activeGachamon', '')
     return
   }
 
   console.log('draw active gachamon', activeGachamon);
+
+  // NOTE Pop utility that utilizies sweet alerts
   Pop.toast(`You got a ${activeGachamon.name}!`, 'success', 'top', 1000, true)
   setHTML('activeGachamon', activeGachamon.ActiveGachamonCard)
 }
@@ -46,7 +49,6 @@ export class GachamonsController {
     // !SECTION
 
     // SECTION listeners
-
     AppState.on('activeGachamon', _drawActiveGachamon)
     AppState.on('myGachamons', _drawMyGachamons)
     // !SECTION
